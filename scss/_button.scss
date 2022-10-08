@@ -1,0 +1,28 @@
+.arrow{ 
+    a {
+        img{
+            padding: 5% 0 5% 45%;
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .arrow{
+        a{
+            img{
+                padding: 5% 0 5% 20%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px){
+    .arrow{
+        a{
+            img{
+                padding: 0;
+                width: 90%;
+            }
+        }
+    }
+}

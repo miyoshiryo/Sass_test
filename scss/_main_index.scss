@@ -1,0 +1,249 @@
+.section{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about{
+    &_wrap{
+        @include flex;
+    }
+
+    &_img{
+        display: inline-block;
+        position: relative;
+
+        img{
+            max-width: 500px;
+            width: 50vw;
+            height: auto;
+        }
+
+        ::after{
+            display: block;
+            @include after($cTransparent, 100%, 100%);
+            top: 0;
+            left: 0;
+            box-shadow: inset 0 0 16px 10px $cWhite;
+        }
+    }
+
+    &_txt{
+        margin: 8px 4%;
+
+        p{
+            line-height: 48px;
+
+            strong{
+                background: linear-gradient(transparent 50%, $cYellow_Light);
+            }
+        }
+    }
+
+    &_ttl{
+        h3{
+            display: inline-block;
+            font-size: 40px;
+            margin-bottom: 24px;
+            color: $cYellow;
+        }
+
+        ::after{
+            content: "";
+            display: inline-block;
+            width: calc(100% - 290px);
+            height: 3px;
+            background: $cYellow;
+        }
+    }
+}
+
+.feature{
+    background: $cWhite2;
+    margin-top: 50px;
+
+    &_txt{
+        padding: 5%;
+
+        p{
+            letter-spacing: .2em;
+            line-height: 1.8em;
+            padding-bottom: 140px;
+
+            strong{
+                color: $cYellow;
+            }
+
+            span{
+                border-bottom: solid $cYellow 2px;
+            }
+        }
+    }
+    
+    
+    &_item{
+        width: 480px;
+        height: 680px;
+        background: $cWhite;
+        box-shadow: 4px 4px 8px 4px $cTransparent_Black;
+        display: inline-block;
+        
+        &.item1 .feature_img{
+            background-image: url(../img/feature1.jpg);
+        }
+        
+        &.item2 .feature_img{
+            background-image: url(../img/feature2.jpg);
+        }
+        
+        &.item2{
+            float: right;
+        }
+
+        h3{
+            padding: 28px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        p{
+            padding: 0 24px;
+            font-size: 24px;
+            line-height: 1.5em;
+        }
+    }
+    
+    &_img{
+        width: 100%;
+        height: 420px;
+        background-position: 60% 50%;
+        background-size: cover;
+    }
+}
+
+.service{
+
+    &_wrap{
+        padding: 0 16px;
+    }
+
+    &_item{
+        width: 100%;
+        height: 160px;
+        @include flex(right, center);
+        border-color: $cWhite;
+        box-shadow: 4px 4px 8px 4px $cTransparent_Black;
+        margin-bottom: 28px;
+
+        &_img{
+            width: 25%;
+            padding-left: 16px;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        p{
+            width: 65%;
+            margin-left: 30px;
+            font-size: 20px;
+            line-height: 1.8em;
+        }
+    }
+
+    
+    &_txt{
+        padding: 0 3%;
+
+        p{
+            letter-spacing: .2em;
+            line-height: 1.8em;
+            padding-bottom: 100px;
+
+            span{
+                border-bottom: solid 2px $cYellow;
+            }
+
+            strong{
+                color: $cYellow;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px){
+    .about{
+        &_img{
+            img{
+                max-width: 340px;
+            }
+        }
+
+        &_ttl{
+            h3{
+                font-size: 38px;
+            }
+        }
+    }    
+
+    .feature{
+        &_item{
+            max-width: 350px;
+        }
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .section{
+        width: 90%;
+    }
+
+    .about{
+        &_ttl{
+            h3{
+                font-size: 36px;
+            }
+        }
+    }
+
+    .feature{
+        &_item{
+            width: 320px;
+
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px){
+    .about{
+        &_wrap{
+            display: block;
+        }
+
+        &_img{
+            img{
+                width: 400px;
+            }
+        }
+    }
+
+    .feature{
+        &_item{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .service{
+        &_item{
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}

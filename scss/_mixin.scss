@@ -1,0 +1,13 @@
+@mixin flex($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin after($bg:black, $width: 0, $height: 0) {
+    content: "";
+    position: absolute;
+    background: $bg;
+    width: $width;
+    height: $height;
+}
